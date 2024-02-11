@@ -3,9 +3,14 @@
 echo "executing install-packages.sh"
 set -e
 
+#运行GNU/Linux 更换系统软件源脚本
+echo "Changing mirrors ...."
+bash <(curl -sSL https://linuxmirrors.cn/main.sh)
+apt update -y
+
 # Upgrade packages
-echo "Upgrading packages..."
-apt update && apt upgrade -y
+echo "Upgrading packages... Skipped."
+#apt update && apt upgrade -y
 
 # Install necessary packages
 echo "Installing packages..."
